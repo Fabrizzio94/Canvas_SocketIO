@@ -8,6 +8,7 @@ function init() {
     // Canvas
     const canvas = document.getElementById('drawing');
     const context = canvas.getContext('2d');
+    const boton = document.getElementById('limpiar');
 
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -43,6 +44,9 @@ function init() {
         setTimeout(mainLoop, 25);
     }
     mainLoop();
+    boton.addEventListener('click', () => {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }, false);
 }
 
 document.addEventListener('DOMContentLoaded', init);
